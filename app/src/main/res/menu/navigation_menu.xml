@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item android:title="General">
+        <menu>
+            <group android:checkableBehavior="single">
+				<item
+					android:id="@+id/miPhoneConfg"
+					android:icon="@drawable/ic_wifi_tethering_black_24dp"
+					android:title="Radio Network"/>
+
+				<item android:id="@+id/miSettings"
+					android:icon="@drawable/ic_settings"
+					android:title="Settings"/>
+            </group>
+        </menu>
+    </item>
+	
+	
+	<item android:title="Contact Me">
+        <menu>
+            <group android:checkableBehavior="single">
+				<item android:id="@+id/facebook"
+					android:icon="@drawable/fb"
+					android:title="Facebook"/>
+
+				<item android:id="@+id/github"
+					android:icon="@drawable/github"
+					android:title="Github"/>
+
+            </group>
+        </menu>
+    </item>
+
+
+	<item android:title="More">
+        <menu>
+            <group android:checkableBehavior="single">
+				<item android:id="@+id/rate"
+					android:icon="@drawable/share"
+					android:title="@string/rate_app"/>
+
+				<item android:id="@+id/about"
+					android:icon="@drawable/about"
+					android:title="@string/about"/>
+
+            </group>
+        </menu>
+    </item>
+
+</menu>
+

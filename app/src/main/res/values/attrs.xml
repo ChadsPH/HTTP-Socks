@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DataGraph">
+		<attr name="dg_colorDown" format="color" />
+		<attr name="dg_colorUp" format="color" />
+		<attr name="dg_colorText" format="color" />
+	</declare-styleable>
+</resources>

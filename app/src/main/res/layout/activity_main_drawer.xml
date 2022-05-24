@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent">
+    
+    <androidx.drawerlayout.widget.DrawerLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:fitsSystemWindows="true"
+        android:id="@+id/drawer"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent">
+        
+        <LinearLayout
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:orientation="vertical">
+            
+          <androidx.appcompat.widget.Toolbar
+               android:theme="@style/CustomActionBar" 
+               android:id="@id/toolbar_main" 
+               android:background="?colorPrimary"
+               android:layout_width="fill_parent" 
+               android:layout_height="?actionBarSize"
+               android:elevation="0.0dip" 
+               app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
+            
+            <include
+                layout="@layout/activity_main"/>
+            
+        
+        </LinearLayout>
+        
+        <com.google.android.material.navigation.NavigationView
+            android:fitsSystemWindows="true"
+            android:id="@+id/navigation"
+            android:layout_gravity="start"
+            android:layout_height="fill_parent"
+            android:layout_width="250.0dip"
+            app:headerLayout="@layout/nav_header"
+            app:itemIconTint="?colorAccent"
+            app:menu="@menu/navigation_menu">
+            
+            <LinearLayout
+                android:layout_gravity="bottom"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:orientation="vertical">
+                
+                <ImageView
+                    android:background="@null"
+                    android:gravity="center|center"
+                    android:id="@+id/ivLogsDown"
+                    android:layout_height="25.0dip"
+                    android:layout_weight="1.0"
+                    android:layout_width="match_parent"
+                    android:src="@drawable/devz"
+                    android:tint="?colorPrimary"
+                    android:visibility="gone"/>
+                
+                <TextView
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:text="Made with ❤️"/>
+                
+            
+            </LinearLayout>
+            
+        
+        </com.google.android.material.navigation.NavigationView>
+        
+    
+    </androidx.drawerlayout.widget.DrawerLayout>
+    
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/mainCoordinatorLayout1"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end|bottom|center"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        
+        <LinearLayout
+            android:fitsSystemWindows="false"
+            android:id="@+id/bottom_sheet"
+            android:layout_height="360.0dip"
+            android:layout_width="fill_parent"
+            android:orientation="vertical"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="?actionBarSize"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+            
+            <LinearLayout
+                android:background="@color/colorPrimary"
+                android:clickable="true"
+                android:foreground="?android:selectableItemBackground"
+                android:gravity="center"
+                android:id="@+id/bshl"
+                android:layout_height="?actionBarSize"
+                android:layout_marginBottom="0.0dip"
+                android:layout_width="fill_parent"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip">
+                
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:layout_width="fill_parent"
+                    android:orientation="horizontal">
+                    
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Status :"
+                        android:textColor="#ffffffff"
+                        android:textSize="12.0sp"/>
+                    
+                    <TextView
+                        android:gravity="center"
+                        android:id="@+id/connection_status"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5.0dip"
+                        android:layout_width="wrap_content"
+                        android:text="Disconnected"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="#ffffffff"
+                        android:textSize="12.0sp"/>
+                    
+                
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:layout_width="fill_parent"
+                    android:orientation="horizontal">
+                    
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Config Version :"
+                        android:textColor="#ffffffff"
+                        android:textSize="12.0sp"/>
+                    
+                    <TextView
+                        android:id="@+id/ConfigVersion"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5.0dip"
+                        android:layout_width="wrap_content"
+                        android:text="1.0"
+                        android:textColor="#ffffffff"
+                        android:textSize="12.0sp"/>
+                    
+                
+                </LinearLayout>
+                
+            
+            </LinearLayout>
+            
+            <androidx.recyclerview.widget.RecyclerView
+                android:background="#ffffff"
+                android:gravity="start"
+                android:id="@+id/recyclerLog"
+                android:layout_alignParentLeft="true"
+                android:layout_height="match_parent"
+                android:layout_width="fill_parent"/>
+            
+        
+        </LinearLayout>
+        
+    
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

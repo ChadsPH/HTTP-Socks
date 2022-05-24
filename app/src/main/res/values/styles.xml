@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	
+	
+	<!-- Style geral do app -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+		<item name="colorPrimary">@color/colorPrimary</item>
+		<item name="colorPrimaryDark">@color/colorSecondary</item>
+		<item name="colorAccent">@color/colorAccent</item>
+		<item name="android:fontFamily">@font/chadx</item>
+		<item name="preferenceTheme">@style/AppPreference</item>
+		<item name="android:textColor">@color/red</item>
+		<item name="android:textColorHint">@color/red</item>
+		<item name="android:navigationBarColor" tools:targetApi="21">@color/colorSecondary</item>
+	    <item name="windowActionBar">false</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="windowNoTitle">true</item>
+	</style>
+	
+	<!-- Alert Dialog -->
+	<style name="AppAlertDialog"
+        parent="ThemeOverlay.MaterialComponents.Light">
+		<item name="colorAccent">@color/colorAccent</item>
+		<item name="android:textColor">@color/colorText</item>
+		<item name="android:textColorHint">@color/colorText</item>
+		<item name="buttonTint">@color/colorText</item>
+	</style>
+	
+	<style name="AppTheme.NoActionBar">
+		<item name="windowNoTitle">true</item>
+		<item name="windowActionBar">false</item>
+		<item name ="android:windowBackground">@color/colorPrimary</item>
+		<item name="android:navigationBarColor">@color/colorPrimary</item>
+	</style>
+	
+	<!-- Preference Theme -->
+	<style name="AppPreference"
+        parent="@style/PreferenceThemeOverlay.v14.Material">
+	</style>
+	
+	
+	<!-- Toolbar theme -->
+	<style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+		<item name="android:textColorPrimary">@color/white</item>
+		<item name="actionMenuTextColor">@android:color/holo_green_light</item>
+		<item name="colorAccent">@color/gray</item>
+		<item name="colorControlNormal">@color/white</item>
+		<item name="colorControlActivated">@color/blue_light</item>
+		<item name="colorControlHighlight">@color/gray_light</item>
+	</style>
+	
+	<!-- Necessario para o modo noturno-->
+	<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+	<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+	
+	<style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+		<item name="android:textColor">@color/white</item>
+		<item name="android:textSize">21sp</item>
+		<item name="android:textStyle">normal</item>
+	</style>
+		
+   <style name="CustomActionBar" parent="ThemeOverlay.MaterialComponents.Dark">
+   <item name="android:windowActionBarOverlay">true</item>
+   <item name="windowActionBarOverlay">true</item>
+   </style>
+    
+    <style name="AppThemeLogin" parent="Theme.AppCompat.DayNight.NoActionBar">
+		<item name="colorAccent">@color/colorAccent</item>
+		<item name="alertDialogTheme">@style/AppAlertDialogLogin</item>
+
+		<item name="android:textColor">@color/colorText</item>
+		<item name="android:textColorHint">@color/colorText</item>
+		
+		<item name="buttonTint">@color/colorText</item>
+	</style>
+	
+	<!-- Alert Dialog -->
+	<style name="AppAlertDialogLogin"
+        parent="Theme.AppCompat.Light.Dialog.Alert">
+		<item name="colorAccent">@color/colorAccent</item>
+		<item name="android:textColor">@color/colorText</item>
+		<item name="android:textColorHint">@color/colorText</item>
+		<item name="buttonTint">@color/colorText</item>
+		<item name="android:background">@color/colorSecondaryBackground</item>
+	</style>
+	
+	
+</resources>
+
+
+
+

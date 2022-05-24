@@ -1,0 +1,49 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:key="screenMain">
+
+	<PreferenceCategory
+		android:title="@string/category_forward_udp">
+		<CheckBoxPreference
+			android:key="udpForward"
+			android:summary="@string/summary_forward_udp"
+			android:title="@string/title_forward_udp" />
+
+		<EditTextPreference
+            android:key="udpResolver"
+            android:title="@string/title_resolver_udp"
+            android:summary="@string/summary_resolver_udp"
+			android:value="127.0.0.1:7300"
+			android:singleLine="true"/>
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:title="@string/category_forward_dns">
+
+		<CheckBoxPreference
+			android:key="dnsForward"
+			android:summary="@string/summary_forward_dns"
+			android:title="@string/title_forward_dns" />
+
+		<Preference
+            android:key="set_dns"
+            android:title="Set DNS"
+		/>
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:title="@string/category_settings_adicionais">
+
+		<EditTextPreference
+            android:key="pingerSSH"
+            android:title="@string/title_ping_time"
+			android:maxLength="3"
+            android:summary="3"
+			android:singleLine="true"
+		/>
+
+	</PreferenceCategory>
+
+</PreferenceScreen>

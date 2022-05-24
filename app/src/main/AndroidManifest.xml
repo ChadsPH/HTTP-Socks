@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='utf-8'?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.chadx.sockshttp">
+
+    <!-- have full network access -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- view network connections -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!-- modify or delete the contents of your shared storage -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <!-- read the contents of your shared storage -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!-- run foreground service -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+    <!-- control vibration -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application
+        android:name="com.chaddevz.sockshttp.SocksHttpApp"
+        android:allowBackup="true"
+        android:icon="@drawable/haxxor2"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:resizeableActivity="true"
+        android:extractNativeLibs="true"
+        android:requestLegacyExternalStorage="true">
+		
+		<activity android:name="com.chaddevz.sockshttp.Errors"
+			android:exported="false"/>
+		
+        <activity
+            android:name="com.chaddevz.sockshttp.LauncherActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:label=" "
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"
+			android:launchMode="singleTask"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:name="com.chaddevz.sockshttp.MainActivity"/>
+
+        <activity
+            android:name="com.chaddevz.sockshttp.view.SettingsActivity"
+            android:parentActivityName="com.chaddevz.sockshttp.MainActivity"
+            android:label="@string/settings"/>
+		
+		<activity
+            android:name="com.chaddevz.sockshttp.activities.AboutActivity"
+            android:parentActivityName="com.chaddevz.sockshttp.MainActivity"
+            android:label="About"/>
+
+        <activity
+            
+            android:name="com.chaddevz.service.LaunchVpn"
+            >
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+            </intent-filter>
+
+        </activity>
+
+        <receiver android:name="com.chaddevz.service.MainReceiver">
+
+            <intent-filter>
+
+                <action android:name="com.chaddevz.service.MainReceiver.ACTION_SERVICE_STOP">
+
+                </action>
+
+                <action android:name="com.chaddevz.service.MainReceiver.ACTION_SERVICE_RESTART">
+
+                </action>
+
+            </intent-filter>
+
+        </receiver>
+
+        <service
+            
+            android:name="com.chaddevz.service.tunnel.vpn.TunnelVpnService"
+            android:exported="false"
+            android:enabled="true"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+
+            <intent-filter>
+
+                <action android:name="android.net.VpnService"/>
+
+            </intent-filter>
+
+        </service>
+
+        <service
+            android:label="HttpSocks Service"
+            android:name="com.chaddevz.service.HttpService"
+            android:stopWithTask="false"
+            android:exported="false">
+
+        </service>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7494485212856544~1607683804"/>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true"/>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false"/>
+
+    </application>
+
+</manifest>
+
+
+

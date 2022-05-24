@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+	
+	signingConfigs {
+        release {
+            keyAlias 'app-release'
+            keyPassword 'Aizenluis'
+            storeFile file('aizen_sarmiento.jks')
+            storePassword 'Aizenluis'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.chadx.sockshttp"
+		minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1"
+    }
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    
+
+lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+
+dependencies {
+    implementation 'com.google.android.material:material:1.3.0'
+	implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+	implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+	implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+	implementation 'androidx.legacy:legacy-preference-v14:1.0.0'
+//	implementation 'com.google.android.material:material:1.0.0'
+	implementation 'com.google.android.gms:play-services-ads-lite:20.4.0'
+    implementation 'net.i2p.crypto:eddsa:0.3.0'
+	implementation 'org.connectbot.jbcrypt:jbcrypt:1.0.0'
+    def lifecycle_version = "2.3.1"
+	//implementation 'com.google.android.material:material:1.0.0'
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-runtime:2.3.1"
+}
+
+
