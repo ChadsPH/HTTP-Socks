@@ -1,3 +1,3 @@
-# SocksHttp
-Cliente SSH Túnnel, simples e rápido.
+# HTTP Socks 
+SSH Simple Client VPN.
 
